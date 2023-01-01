@@ -75,11 +75,11 @@ const rowVariants = {
 const offset = 6;
 
 function Home() {
+  const [index, setIndex] = useState(0);
   const { data, isLoading } = useQuery<IGetMoviesResult>(
     ["movies", "nowPlaying"],
     getMovies
   );
-  const [index, setIndex] = useState(0);
   const [leaving, setLeaving] = useState(false);
   const incraseIndex = () => {
     if (data) {
